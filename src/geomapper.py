@@ -28,10 +28,11 @@ gdf = gpd.read_file("data/supervisory_district_data/geo_export_184b7eec-1746-4e9
 load_dotenv()
 
 api_key = os.getenv('PLACES_API_KEY')
-address = '840 Brannan St, San Francisco, CA 94103'  # An example place
+address = 'San Francisco'  # An example place
 
 # Fetch coordinates
 latitude, longitude = fetch_coordinates(api_key, address)
+print(latitude,longitude)
 
 # # Create a DataFrame with the fetched coordinates
 df = pd.DataFrame([{'latitude': latitude, 'longitude': longitude}])
